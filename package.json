@@ -7,5 +7,13 @@
     "start": "nodemon app.js"
   },
   "author": "Sarvesh Yadav",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
