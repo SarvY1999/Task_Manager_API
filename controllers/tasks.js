@@ -1,9 +1,20 @@
-const getAllTasks = (req, res) => {
-    res.send('all tasks')
+const Task = require('../models/Tasks')
+const getAllTasks = async (req, res) => {
+    try {
+        const allTasks = await Task.find({});
+        res.status(200).json({ allTasks });
+    } catch (error) {
+        res.status(500).json({ msg: error })
+    }
 };
 
-const createTask = (req, res) => {
-    res.json(req.body)
+const createTask = async (req, res) => {
+    try {
+        const task = await Task.create(req.body)
+        res.status(201).json({ task });
+    } catch (error) {
+        res.status(500).json({ msg: error })
+    }
 };
 
 const getTask = (req, res) => {
