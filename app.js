@@ -5,13 +5,10 @@ const tasks = require('./routes/tasks');
 const connectDb = require('./DB/connect');
 require('dotenv').config();
 //middleware
+app.use(express.static('./public'))
 app.use(express.json());
 
 //routes
-app.get('/', (req, res) => {
-    res.send("Yo it's Up")
-});
-
 app.use('/api/v1/tasks', tasks);
 
 const start = async () => {
